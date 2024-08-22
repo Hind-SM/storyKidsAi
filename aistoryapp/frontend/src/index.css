@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellefair&family=Bubblegum+Sans&family=Dancing+Script:wght@400..700&family=Great+Vibes&display=swap");
+
+.container-fluid {
+  background: linear-gradient(
+    178.6deg,
+    rgb(232, 245, 253) 3.3%,
+    rgb(252, 253, 255) 109.6%
+  );
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.form-label {
+  font-size: 22px;
+}
+.input-page {
+  background-color: rgb(252, 253, 255);
+  font-family: "Bellefair", serif;
+  border-radius: 2%;
+  height: 85%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.input-form-container {
+  padding: 5%;
+}
+
+.generate-story-btn {
+  font-family: "Dancing Script", cursive;
+  outline: 0;
+  grid-gap: 8px;
+  align-items: center;
+  background: 0 0;
+  border: 1px solid #000;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-size: 26px;
+  gap: 8px;
+  justify-content: center;
+  line-height: 1.5;
+  overflow: hidden;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  transition: all 0.14s ease-out;
+  white-space: nowrap;
+}
+
+.generate-story-btn:hover {
+  box-shadow: 4px 4px 0 #000;
+  transform: translate(-4px, -4px);
+}
+.generate-story-btn:focus-visible {
+  outline-offset: 1px;
+}
+
+/* OUTPUT CSS */
+
+.image-output-container {
+  padding: 5%;
+}
+.story-output-container {
+  padding: 4%;
+  text-align: center;
+}
+
+.output-page {
+  background-color: rgb(252, 253, 255);
+  font-family: "Bellefair", serif;
+  font-size: 25px;
+  height: 85%;
+  border-radius: 2%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.arrow-btn {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.536) 0 6px 20px;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 2.2rem;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1rem; /* Adjust padding for narrower width */
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto; /* Make the width auto to fit the content */
+}
+
+.arrow-btn:hover {
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+}
+
+.arrow-container {
+  display: inline-block; /* Allows the button to fit its content */
+  width: auto; /* Ensures the container doesn't stretch */
+  padding: 0; /* Remove extra padding */
+}
