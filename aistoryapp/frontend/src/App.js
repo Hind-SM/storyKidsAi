@@ -22,20 +22,23 @@ function App() {
   ];
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [currentPageImage, setCurrentPageImage] = useState(0); // this is to update the image for each page
 
   const handleNext = () => {
-    if (currentPage < storyParts.length) {
+    if (currentPage < storyParts.length - 1) {
+      setStory(storyParts[currentPage + 1]);
+      console.log("Before story update:", currentPage); // This logs the old value
       setCurrentPage(currentPage + 1);
+      console.log("After story update:", currentPage);
     }
   };
 
   const handlePrev = () => {
     if (currentPage > 0) {
+      setStory(storyParts[currentPage - 1]);
       setCurrentPage(currentPage - 1);
     }
   };
-
-  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,13 +51,7 @@ function App() {
   function onSubmit(e) {
     e.preventDefault();
     console.log(formData);
-    setStory(
-      `Once upon a time, a ${
-        formData.character
-      } embarked on a ${formData.theme.toLowerCase()} journey. The story was written in a ${formData.style.toLowerCase()} style and was perfect for readers aged ${
-        formData.age
-      }.`
-    );
+    setStory(storyParts[0]);
   }
 
   return (
@@ -186,7 +183,11 @@ function App() {
           <div className="col-md-7 output-page mx-auto">
             <div className="row image-output-container align-items-center justify-content-center d-flex">
               <div className="col arrow-container align-items-center justify-content-center d-flex">
-                <button className="arrow-btn" role="Button">
+                <button
+                  className="arrow-btn"
+                  role="Button"
+                  onClick={handlePrev}
+                  disabled={currentPage === 0}>
                   <i class="bi bi-arrow-left" />
                 </button>
               </div>
@@ -195,7 +196,11 @@ function App() {
               </div>
 
               <div className="col arrow-container align-items-center justify-content-center d-flex">
-                <button className=" arrow-btn" role="Button">
+                <button
+                  className=" arrow-btn"
+                  role="Button"
+                  onClick={handleNext}
+                  disabled={currentPage === storyParts.length - 1}>
                   <i class="bi bi-arrow-right" />
                 </button>
               </div>
